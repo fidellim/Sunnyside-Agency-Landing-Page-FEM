@@ -26,12 +26,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Sunnyside Agency Landing Page Dekstop](/images/sunnyside_agency_landing_page_desktop.png)
+![Sunnyside Agency Landing Page Mobile](/images/sunnyside_agency_landing_page_mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/fidellim/Sunnyside-Agency-Landing-Page-FEM)
+- Live Site URL: [Live Site](https://sunnyside-agency-landing-page-fem-fidellim.netlify.app/)
 
 ## My process
 
@@ -40,37 +41,30 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Grid
+- SASS
+- Gulp
 - Mobile-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Learned how to use autoprefixer and customize what browsers should be available using browserlist.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
 ```
-
-```css
-.proud-of-this-css {
-	color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-	console.log("🎉");
-};
+last 4 version
+> 5%
+IE 10
 ```
 
 ### Continued development
 
+Learn more npm packages.
+
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Autoprefixer I](https://github.com/postcss/autoprefixer#gulp) || [Autoprefixer II](https://autoprefixer.github.io/) || [Autoprefixer III](https://github.com/sindresorhus/gulp-autoprefixer) - Guide on autoprefixer.
+- [Browserlist I](https://www.npmjs.com/package/browserslist) || [Browserlist II](https://github.com/browserslist/browserslist) - Guide to declare what browser updates should be available for autoprefixer.
+- [Triangle Generator](http://apps.eky.hk/css-triangle-generator/) - Code on how to create triangles using CSS.
 
 ## Author
 
