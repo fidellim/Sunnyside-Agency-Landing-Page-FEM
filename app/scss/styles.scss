@@ -1,0 +1,272 @@
+@use "sass:math";
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+@import "base/variables";
+
+// convert px to rem
+@function toRem($value) {
+	$remValue: math.div($value, 16) + rem;
+	@return $remValue;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: $barlow;
+	font-size: toRem(18);
+}
+
+nav {
+	ul {
+		list-style-type: none;
+	}
+}
+
+img {
+	display: block;
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+
+button {
+	display: block;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+}
+
+// ---------------------------------------
+// Header
+header {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: toRem(30) toRem(25);
+}
+
+.header-logo {
+	width: toRem(125);
+}
+
+.header-nav {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+
+// ---------------------------------------
+// Main
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: url("/images/mobile/image-header.jpg");
+	background-position: center;
+	background-size: cover;
+
+	h1 {
+		font-family: $fraunces;
+		color: $white;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: toRem(7.5);
+		// word-break: break-word;
+		margin: 0 toRem(10);
+		margin-bottom: toRem(60);
+		font-weight: 900;
+		font-size: toRem(40);
+	}
+}
+
+.arrow-down {
+	height: toRem(150);
+	width: auto;
+}
+
+// ---------------------------------------
+// Section
+.section--articles {
+	display: grid;
+	justify-items: center;
+
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		line-height: toRem(30);
+		max-width: toRem(400);
+		padding: toRem(60) toRem(20);
+		gap: toRem(30);
+
+		h2 {
+			font-family: $fraunces;
+			line-height: toRem(45);
+		}
+	}
+
+	> article {
+		h2 {
+			font-size: toRem(35);
+			color: $veryDarkDesaturatedBlue;
+		}
+
+		p {
+			color: $darkGrayishBlue;
+		}
+
+		button {
+			position: relative;
+			font-family: $fraunces;
+			font-size: toRem(17);
+			text-transform: uppercase;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: toRem(-3.5);
+				left: toRem(-7.5);
+				right: toRem(-7.5);
+				height: toRem(10);
+				border-radius: toRem(7);
+				z-index: -1;
+			}
+		}
+	}
+
+	> div {
+		position: relative;
+
+		&:nth-of-type(1) {
+			color: $darkDesaturatedCyan;
+		}
+
+		&:nth-of-type(2) {
+			color: $darkBlue;
+		}
+
+		> article {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+		}
+	}
+}
+
+.btn--yellow::after {
+	background-color: hsla(51, 100%, 49%, 0.25);
+}
+
+.btn--pink::after {
+	background-color: hsla(7, 99%, 70%, 0.25);
+}
+
+.section--testimonials {
+	padding: toRem(60) toRem(30);
+
+	> h3 {
+		font-family: $fraunces;
+		color: $grayishBlue;
+		letter-spacing: toRem(5);
+		font-size: toRem(18);
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 3.5rem;
+	}
+}
+
+.testimonials {
+	display: grid;
+	gap: 4rem;
+}
+
+.testimonial {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img,
+	p {
+		margin-bottom: toRem(40);
+	}
+
+	p {
+		text-align: center;
+		color: $veryDarkGrayishBlue;
+		line-height: toRem(35);
+	}
+
+	h3 {
+		font-family: $fraunces;
+		color: $veryDarkDesaturatedBlue;
+		margin-bottom: toRem(15);
+	}
+
+	h4 {
+		color: $grayishBlue;
+		font-size: toRem(16);
+	}
+}
+
+.profileImg {
+	width: toRem(70);
+	height: toRem(70);
+	border-radius: 50%;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+// ---------------------------------------
+// Footer
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: toRem(60) toRem(30) toRem(30) toRem(30);
+	background-color: $darkModerateCyan;
+
+	nav {
+		max-width: toRem(375);
+		width: 100%;
+		ul {
+			display: grid;
+			grid-auto-flow: column;
+			justify-content: space-between;
+			color: $darkDesaturatedCyan;
+		}
+	}
+}
+
+.footer-logo {
+	width: toRem(175);
+	margin-bottom: toRem(40);
+	filter: invert(28%) sepia(5%) saturate(4119%) hue-rotate(116deg)
+		brightness(30%) contrast(85%);
+}
+
+.socials {
+	display: flex;
+	margin-top: toRem(80);
+	gap: toRem(30);
+}
+
+.social {
+	width: auto;
+	filter: brightness(50%);
+}
